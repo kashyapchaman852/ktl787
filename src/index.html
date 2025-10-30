@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Store</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      overflow-x: hidden;
+    }
+
+    /* Navbar container */
+    nav {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      animation: slideDown 1s ease forwards;
+    }
+
+    /* Navbar animation */
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Logo */
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #00d4ff;
+      cursor: pointer;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00d4ff; }
+      to { text-shadow: 0 0 25px #00d4ff, 0 0 40px #00d4ff; }
+    }
+
+    /* Navbar links */
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: #00d4ff;
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      color: #00d4ff;
+      transform: scale(1.1);
+    }
+
+    /* Button */
+    .buy-btn {
+      background: #00d4ff;
+      color: #0f2027;
+      padding: 8px 18px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 0 10px #00d4ff;
+      transition: 0.3s ease;
+    }
+
+    .buy-btn:hover {
+      background: white;
+      color: #0f2027;
+      box-shadow: 0 0 20px #00d4ff;
+      transform: scale(1.1);
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 60px 20px;
+      background: #ffffff;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero img {
+      width: 220px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+
+    .hero img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+    }
+
+    .hero h2 {
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #0f2027;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .hero img {
+        width: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Mobile<span style="color:white;">Zone</span></div>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Mobiles</a>
+      <a href="#">Accessories</a>
+      <a href="#">Offers</a>
+      <a href="#">Contact</a>
+      <a href="#" class="buy-btn">Buy Now</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Animated Images -->
+  <section class="hero">
+    <h2>🔥 Latest Smartphones Collection 🔥</h2>
+    <img src="https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/apple-iphone-15-pro-max/titanium-blue/apple-iphone-15-pro-max-titanium-blue-frontimage.png" alt="iPhone 15 Pro Max">
+    <img src="https://images.samsung.com/is/image/samsung/p6pim/in/sm-s921blbdins/gallery/in-galaxy-s24-s921-499331-sm-s921blbdins-thumb-539470642" alt="Samsung S24 Ultra">
+    <img src="https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-ultra-1.jpg" alt="Xiaomi 14 Ultra">
+    <img src="https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-12r-2.jpg" alt="OnePlus 12R">
+  </section>
+
+</body>
+</html>
